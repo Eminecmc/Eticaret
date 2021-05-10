@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="eticaretvtModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Kategori">
+    <Key>
+      <PropertyRef Name="KategoriID" />
+    </Key>
+    <Property Name="KategoriID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KategoriAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="KULLANICILAR1">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserSoyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserMail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserSifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Rol" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Odeme1">
+    <Key>
+      <PropertyRef Name="OdemeID" />
+    </Key>
+    <Property Name="OdemeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KullaniciID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OdemeAd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OdemeAdres" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="OdemeTelNo" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="UrunListesi">
+    <Key>
+      <PropertyRef Name="UrunID" />
+    </Key>
+    <Property Name="UrunID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kategori" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UrunAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UrunFiyat" Type="Int32" />
+    <Property Name="UrunFoto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UrunOzellik" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UrunOzellik2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UrunFoto1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UrunFoto2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UrunFoto3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Sepet1">
+    <Key>
+      <PropertyRef Name="SepetID" />
+    </Key>
+    <Property Name="SepetID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SepetFoto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SepetAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SepetFiyat" Type="Int32" />
+    <Property Name="KullaniciID" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="eticaretvtEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Kategori" EntityType="Self.Kategori" />
+    <EntitySet Name="KULLANICILAR1" EntityType="Self.KULLANICILAR1" />
+    <EntitySet Name="Odeme1" EntityType="Self.Odeme1" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="UrunListesi" EntityType="Self.UrunListesi" />
+    <EntitySet Name="Sepet1" EntityType="Self.Sepet1" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="eticaretvtModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BeniHatirla">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Mail" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="Remember" Type="bit" />
+  </EntityType>
+  <EntityType Name="Kategori">
+    <Key>
+      <PropertyRef Name="KategoriID" />
+    </Key>
+    <Property Name="KategoriID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KategoriAdi" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="KULLANICILAR1">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserAdi" Type="varchar" MaxLength="50" />
+    <Property Name="UserSoyadi" Type="varchar" MaxLength="50" />
+    <Property Name="UserMail" Type="varchar" MaxLength="50" />
+    <Property Name="UserSifre" Type="varchar" MaxLength="50" />
+    <Property Name="Rol" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="Odeme1">
+    <Key>
+      <PropertyRef Name="OdemeID" />
+    </Key>
+    <Property Name="OdemeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KullaniciID" Type="varchar" MaxLength="50" />
+    <Property Name="OdemeAd" Type="varchar" MaxLength="50" />
+    <Property Name="OdemeAdres" Type="varchar" MaxLength="250" />
+    <Property Name="OdemeTelNo" Type="varchar" MaxLength="11" />
+  </EntityType>
+  <EntityType Name="Sepet1">
+    <Key>
+      <PropertyRef Name="SepetID" />
+    </Key>
+    <Property Name="SepetID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SepetFoto" Type="varchar" MaxLength="50" />
+    <Property Name="SepetAdi" Type="varchar" MaxLength="50" />
+    <Property Name="SepetFiyat" Type="int" />
+    <Property Name="KullaniciID" Type="int" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="UrunListesi">
+    <Key>
+      <PropertyRef Name="UrunID" />
+    </Key>
+    <Property Name="UrunID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kategori" Type="varchar" MaxLength="50" />
+    <Property Name="UrunAdi" Type="varchar" MaxLength="50" />
+    <Property Name="UrunFiyat" Type="int" />
+    <Property Name="UrunFoto" Type="varchar" MaxLength="50" />
+    <Property Name="UrunOzellik" Type="varchar(max)" />
+    <Property Name="UrunOzellik2" Type="varchar(max)" />
+    <Property Name="UrunFoto1" Type="varchar" MaxLength="50" />
+    <Property Name="UrunFoto2" Type="varchar" MaxLength="50" />
+    <Property Name="UrunFoto3" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="eticaretvtModel1StoreContainer">
+    <EntitySet Name="BeniHatirla" EntityType="Self.BeniHatirla" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kategori" EntityType="Self.Kategori" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KULLANICILAR1" EntityType="Self.KULLANICILAR1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Odeme1" EntityType="Self.Odeme1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sepet1" EntityType="Self.Sepet1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UrunListesi" EntityType="Self.UrunListesi" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
